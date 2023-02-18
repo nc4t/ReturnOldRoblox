@@ -3,10 +3,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/specowos/lua-projects
 
 
     
-    --// REMEMBER IF U ARE BUILDING THIS YOURSELF WITHOUT LOADSTRING U MUST HAVE THE SETTINGS TABLE, UNCOMMENT THIS BLOCK
+    --// REMEMBER IF U ARE BUILDING THIS YOURSELF WITHOUT LOADSTRING U MUST HAVE THE SETTINGS TABLE, UNCOMMENT THIS BLOCK 
 
     --// config settings
-    getgenv().config = {
+	--[[getgenv().config = {
         old_console = true,
         old_plist = true,
         old_graphics = false,
@@ -18,9 +18,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/specowos/lua-projects
         fps_counter = true,
         built_in_silentre = true,
         c00l_mode = true
-    }
-
-
+    } 
+	
 --// FEW DONT WORK *yet* WILL BE ADDED!
 --[[ 
     things to be added:
