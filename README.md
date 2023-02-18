@@ -6,7 +6,7 @@ Updates spec's old roblox coregui script to work with the latest version of Robl
 getgenv().config = {
     old_console = true,
     old_plist = true,
-    old_graphics = false,
+    old_graphics = true,
     dev = true
 }
 
@@ -14,7 +14,7 @@ getgenv().config = {
 getgenv().mods = {
     fps_counter = true,
     built_in_silentre = true,
-    c00l_mode = true
+    c00l_mode = false
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SheldoFishHead/ReturnOldRoblox/main/Source"))()
