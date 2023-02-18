@@ -1,5 +1,5 @@
 # ReturnOldRoblox
-Updates spec's old roblox coregui script to work with the latest version of Roblox. (ty noto)
+Fixed version of spec's 2016 roblox coregui script to work with the latest version of Roblox. (ty noto)
 
 ```lua
 --// config settings
