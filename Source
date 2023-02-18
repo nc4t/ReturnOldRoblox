@@ -114,20 +114,17 @@ TopBar.LeftFrame.MenuIcon.Background.Icon.Image = "rbxasset://textures/ui/Menu/H
 
 --// make health bars visible
 if config.health_bar then
-function displayHealth(character)
-    if character then
-        character.Humanoid.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOn
+local RunService = game:GetService("RunService")
+
+RunService.Heartbeat:Connect(function()
+    for _, player in ipairs(game.Players:GetPlayers()) do
+        if player.Character then
+            local hum = player.Character:FindFirstChild("Humanoid")
+            if hum then
+                hum.HealthDisplayType = "AlwaysOn"
+            end
+        end
     end
-end
-
-for _, player in ipairs(game.Players:GetPlayers()) do
-    displayHealth(player.Character)
-end
-
-game.Players.PlayerAdded:Connect(function(player)
-    player.CharacterAdded:Connect(function(character)
-        displayHealth(character)
-    end)
 end)
 end
 
