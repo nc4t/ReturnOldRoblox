@@ -746,7 +746,7 @@ if mods.built_in_silentre then
 
     spawn(function()
         game.RunService.Heartbeat:Connect(function()
-            game.CoreGui:WaitForChild("ThemeProvider").LegacyCloseMenu.CloseMenuButton.Image = getasset("2016_storage/redmenu.png")
+            getThemeProvider().LegacyCloseMenu.CloseMenuButton.Image = getasset("2016_storage/redmenu.png")
         end)
     end)
 
