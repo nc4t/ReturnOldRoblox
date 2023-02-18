@@ -13,7 +13,7 @@ getgenv().config = {
 --// mods
 getgenv().mods = {
     fps_counter = true,
-    built_in_silentre = true,
+    built_in_silentre = false,
     c00l_mode = false
 }
 
