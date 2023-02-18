@@ -113,7 +113,7 @@ TopBar.LeftFrame.MenuIcon.Background.Icon.Image = "rbxasset://textures/ui/Menu/H
 --// FUNCTIONS:
 
 --// make health bars visible
-if config.health_bar == true then
+if config.health_bar then
 function displayHealth(character)
     if character then
         character.Humanoid.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOn
