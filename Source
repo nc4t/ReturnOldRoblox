@@ -10,7 +10,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/specowos/lua-projects
         old_console = true,
         old_plist = true,
         old_graphics = false,
-        dev = true
+        dev = true,
+		Health_Bar = true
     }
 
     --// mods
@@ -110,6 +111,24 @@ TopBar.LeftFrame.ChatIcon.Background.Icon.Size = UDim2.new(0, 28, 0, 27)
 TopBar.LeftFrame.MenuIcon.Background.Icon.Image = "rbxasset://textures/ui/Menu/Hamburger.png"
 
 --// FUNCTIONS:
+
+--// make health bars visible
+if config.Health_Bar == true then
+function displayHealth(character)
+    if character then
+        character.Humanoid.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOn
+    end
+end
+
+for _, player in ipairs(game.Players:GetPlayers()) do
+    displayHealth(player.Character)
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(character)
+        displayHealth(character)
+    end)
+end)
 
 --// old graphics
 if config.old_graphics == true then
