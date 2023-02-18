@@ -7,7 +7,8 @@ getgenv().config = {
     old_console = true,
     old_plist = true,
     old_graphics = true,
-    dev = true
+    dev = true,
+    Health_Bar = true
 }
 
 --// mods
