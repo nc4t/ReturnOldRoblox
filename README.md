@@ -1,6 +1,8 @@
 # ReturnOldRoblox
 Fixed spec's 2016 coregui script to work with the latest version of Roblox. (ty noto)
 
+added health bars on players
+
 ```lua
 --// config settings
 getgenv().config = {
