@@ -2,62 +2,12 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/specowos/lua-projects/main/project%202016%3A%20Remastered/modules/old_load.lua"))()
 
 
-    
-    --// REMEMBER IF U ARE BUILDING THIS YOURSELF WITHOUT LOADSTRING U MUST HAVE THE SETTINGS TABLE, UNCOMMENT THIS BLOCK 
-
-    --// config settings
-	--[[getgenv().config = {
-        old_console = true,
-        old_plist = true,
-        old_graphics = false,
-        dev = true,
-	health_bar = true
-    }
-
-    --// mods
-    getgenv().mods = {
-        fps_counter = true,
-        built_in_silentre = true,
-        c00l_mode = true
-    } 
-	
---// FEW DONT WORK *yet* WILL BE ADDED!
---[[ 
-    things to be added:
-
-    - teams
-]]
-
-warn("\n"..[[
-
-    # 2016 remastered
-
-    - made code a lil better
-    - based off the original source
-    - original by me and mainly all the work from cola
-
-    - also credit to luatsuki/Wally/Josh#0903 (idk) for the old console script :>
-
-    // spec
-
-]])
-
-function getThemeProvider()
-    for i, v in ipairs(game.CoreGui:GetChildren()) do
-        if v.Name == "ThemeProvider" then
-            if v:FindFirstChild("TopBarFrame") then
-                return v
-            end
-        end
-    end
-end
-
 --// variables/modules
 local CoreGui = game:GetService("CoreGui")
 local RobloxGui = CoreGui:FindFirstChild("RobloxGui")
 local UserInputService = game:GetService("UserInputService")
 
-local TopBar = getThemeProvider().TopBarFrame
+local TopBar = game:GetService("CoreGui").TopBarApp.TopBarFrame
 local ChatIcon = TopBar:WaitForChild("LeftFrame"):WaitForChild("ChatIcon"):WaitForChild("Background"):WaitForChild("Icon")
 
 local UIS = game:GetService("UserInputService")
@@ -100,8 +50,8 @@ TopBar.LeftFrame.MenuIcon.Position = UDim2.new(0, 0, 0, 0)
 TopBar.LeftFrame.MenuIcon.Size = UDim2.new(0, 50, 0, 36)
 TopBar.LeftFrame.MenuIcon.Background.Icon.Position = UDim2.new(0, 25, 0, 12)
 TopBar.LeftFrame.MenuIcon.Background.Icon.Size = UDim2.new(0, 32, 0, 25)
-getThemeProvider().LegacyCloseMenu.CloseMenuButton.Position = UDim2.new(0, -8, 0, 18)
-getThemeProvider().LegacyCloseMenu.CloseMenuButton.Size = UDim2.new(0, 32, 0, 25)
+game:GetService("CoreGui").TopBarApp.LegacyCloseMenu.CloseMenuButton.Position = UDim2.new(0, -8, 0, 18)
+game:GetService("CoreGui").TopBarApp.LegacyCloseMenu.CloseMenuButton.Size = UDim2.new(0, 32, 0, 25)
 
 TopBar.LeftFrame.ChatIcon.Position = UDim2.new(0, 0, 0, 0)
 TopBar.LeftFrame.ChatIcon.Size = UDim2.new(0, 50, 0, 36)
@@ -214,7 +164,7 @@ local HealthContainer = Instance.new("Frame")
 local HealthFill = Instance.new("Frame")
 
 NameHealthContainer.Name = "NameHealthContainer"
-NameHealthContainer.Parent = getThemeProvider().TopBarFrame.RightFrame
+NameHealthContainer.Parent = game:GetService("CoreGui").TopBarApp.TopBarFrame.RightFrame
 NameHealthContainer.BackgroundTransparency = 1.000
 NameHealthContainer.Position = UDim2.new(1, -170, 0.027778089, 0)
 NameHealthContainer.Size = UDim2.new(0, 170, 1, 0)
@@ -321,10 +271,10 @@ game.RunService.Heartbeat:Connect(function()
     end
     TopBar.LeftFrame.MenuIcon.Background.StateOverlay.Image = ""
     if not c00l_mode then
-        getThemeProvider().LegacyCloseMenu.CloseMenuButton.Image = "rbxasset://textures/ui/Menu/HamburgerDown.png"
+        game:GetService("CoreGui").TopBarApp.LegacyCloseMenu.CloseMenuButton.Image = "rbxasset://textures/ui/Menu/HamburgerDown.png"
     end
-    getThemeProvider().LegacyCloseMenu.CloseMenuButton.ImageRectOffset = Vector2.new(0, 0)
-    getThemeProvider().LegacyCloseMenu.CloseMenuButton.ImageRectSize = Vector2.new(0, 0)
+    game:GetService("CoreGui").TopBarApp.LegacyCloseMenu.CloseMenuButton.ImageRectOffset = Vector2.new(0, 0)
+    game:GetService("CoreGui").TopBarApp.LegacyCloseMenu.CloseMenuButton.ImageRectSize = Vector2.new(0, 0)
     if TopBar.RightFrame:FindFirstChild("MoreMenu") then
         TopBar.RightFrame.MoreMenu:Destroy()
     end
@@ -763,7 +713,7 @@ if mods.built_in_silentre then
 
     spawn(function()
         game.RunService.Heartbeat:Connect(function()
-            getThemeProvider().LegacyCloseMenu.CloseMenuButton.Image = getasset("2016_storage/redmenu.png")
+            game:GetService("CoreGui").TopBarApp.LegacyCloseMenu.CloseMenuButton.Image = getasset("2016_storage/redmenu.png")
         end)
     end)
 
