@@ -1,5 +1,5 @@
 # ReturnOldRoblox
-Fixed spec's 2016 coregui script to work with the latest version of Roblox. (ty noto)
+Fixed spec's 2016 coregui script to work with the latest version of Roblox.
 
 added health bars on players
 
