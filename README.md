@@ -1,7 +1,5 @@
 # ReturnOldRoblox
-Fixed spec's 2016 coregui script to work with the latest version of Roblox. (noto helped)
-
-added health bars on players
+doesnt work anymore because specowos deleted his fucking githubjdfibf doigberotibfm -oyiytrmn
 
 ```lua
 --// config settings
