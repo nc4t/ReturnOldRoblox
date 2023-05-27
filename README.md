@@ -1,5 +1,5 @@
 # ReturnOldRoblox
-doesnt work anymore because specowos deleted his fucking githubjdfibf doigberotibfm -oyiytrmn
+doesnt work anymore because spec deleted his fucking github
 
 ```lua
 --// config settings
@@ -18,5 +18,5 @@ getgenv().mods = {
     c00l_mode = false
 }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SheldoFishHead/ReturnOldRoblox/main/Source.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SheldoFishHead/ReturnOldRoblox/main/Source.lua,true"))()
 ```
