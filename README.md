@@ -18,5 +18,5 @@ getgenv().mods = {
     c00l_mode = false
 }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SheldoFishHead/ReturnOldRoblox/main/Source.lua,true"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SheldoFishHead/ReturnOldRoblox/main/Source.lua",true"))()
 ```
