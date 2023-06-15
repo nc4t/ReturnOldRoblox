@@ -1,5 +1,5 @@
 # ReturnOldRoblox
-doesnt work anymore because spec deleted his fucking github
+I am fixing this script. 
 
 ```lua
 --// config settings
