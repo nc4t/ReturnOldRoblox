@@ -1,105 +1,8 @@
-print("Fixed and updated to work with the latest version of Roblox")
+print("Fixed by ncat#3506")
 pcall(function() loadstring(game:HttpGet("http://ligma.wtf/scripts/compat.lua", true))() end)
 wait(0.6)
 local Gui = Instance.new("ScreenGui")
 wait(0.05)
-
---// FUNCTIONS:
-
---// make health bars visible
-if config.health_bar then
-local RunService = game:GetService("RunService")
-
-RunService.Heartbeat:Connect(function()
-    for _, player in ipairs(game.Players:GetPlayers()) do
-        if player.Character then
-            local hum = player.Character:FindFirstChild("Humanoid")
-            if hum then
-                hum.HealthDisplayType = "AlwaysOn"
-            end
-        end
-    end
-end)
-end
-
---// old graphics
-if config.old_graphics == true then
-    --// epic 2016 remastered--// instances
-    local cc = Instance.new("ColorCorrectionEffect")
-    local lighting = game:GetService("Lighting")
-
-    --// hd killer
-    local ihateu = {"DepthOfFieldEffect", "SunRaysEffect", "BloomEffect", "BlurEffect", "ColorCorrectionEffect", "Atmosphere"}
-    for i, v in pairs(lighting:GetChildren()) do
-        for index, value in ipairs(ihateu) do
-            if v:IsA(value) then
-            v:Destroy() 
-            end
-        end
-    end
-
-    --// setup
-    cc.Parent = game.Lighting
-    cc.Saturation = 0
-    cc.Contrast = -0.1
-    lighting.GlobalShadows = false
-
-    sethiddenproperty(lighting, "Technology", Enum.Technology.Compatibility) 
-
-    settings().Rendering.QualityLevel = 14
-
-    devprint("loaded old graphics!")
-end
-
---// thanks for most of the stud tex func beyond5d 😋
-for _, v in ipairs(game:GetDescendants()) do
-    if v:IsA("BasePart") and v.Material == Enum.Material.Plastic and v.TopSurface == Enum.SurfaceType.Studs then
-		if not v:FindFirstChildOfClass("Texture") then
-    		local Studs = Instance.new("Texture")
-    		Studs.Parent = v
-    		Studs.Face = Enum.NormalId.Top
-    		Studs.Texture = "rbxassetid://7027211371"
-    		Studs.Color3 = Color3.new(v.Color.R * 2, v.Color.G * 2, v.Color.B * 2)
-    		Studs.Transparency = v.Transparency
-		end
-    end
-end
-
---// cursor
-local mouse = game:GetService("Players").LocalPlayer:GetMouse()
-mouse.Icon = 'rbxasset://textures/ArrowFarCursor.png'
-
---// fps mod *runs before health bar script
-if mods.fps_counter then
-    local fps_counter = Instance.new("TextLabel")
-
-    fps_counter.Name = "fps_counter"
-    fps_counter.Parent = TopBar.RightFrame
-    fps_counter.BackgroundTransparency = 1
-    fps_counter.Size = UDim2.new(0, 35, 0, 32)
-    fps_counter.Font = Enum.Font.SourceSans
-    fps_counter.TextColor3 = Color3.fromRGB(255, 255, 255)
-    fps_counter.TextSize = 16.000
-    fps_counter.TextXAlignment = Enum.TextXAlignment.Right
-
-    local FPS = 0
-    local Tiempo = tick()
-
-    spawn(function()
-        while game:GetService("RunService").RenderStepped:wait() do
-            local Transcurrido = math.abs(Tiempo-tick())
-            Tiempo = tick()
-            FPS = math.floor(1/Transcurrido)
-        end
-    end)
-
-    spawn(function()
-        while wait(0.25) do
-            fps_counter.Text = "FPS: "..tostring(FPS) 
-        end
-    end)
-end
-
 local ImageLabel = Instance.new("ImageLabel")
 local ImageLabel_2 = Instance.new("ImageLabel")
 local title = Instance.new("TextLabel")
@@ -280,7 +183,7 @@ local a, b = pcall(function()
 
 	coroutine.wrap(JWFFKU_fake_script)()
 	print([[
-huge credits to spec#9001 and noob49#6475 (me)
+huge credits to spec#9001 and ncat#3506 (me)
 
 and yes it is open sourced
 
@@ -1086,8 +989,8 @@ function oldcon()
 	local isTenFootInterface = GuiService:IsTenFootInterface()
 
 	local ClientMemoryAnalyzerClass = CoreGui:WaitForChild("RobloxGui"):WaitForChild("Modules"):WaitForChild("Stats"):WaitForChild("ClientMemoryAnalyzer")
-	local ServerMemoryAnalyzerClass = CoreGui:WaitForChild("RobloxGui"):WaitForChild("Modules"):WaitForChild("Stats"):WaitForChild("ServerMemoryAnalyzer"))
-	local StatsUtils = CoreGui:WaitForChild("RobloxGui"):WaitForChild("Modules"):WaitForChild("Stats"):WaitForChild("StatsUtils"))
+	local ServerMemoryAnalyzerClass = CoreGui:WaitForChild("RobloxGui"):WaitForChild("Modules"):WaitForChild("Stats"):WaitForChild("ServerMemoryAnalyzer")
+	local StatsUtils = CoreGui:WaitForChild("RobloxGui"):WaitForChild("Modules"):WaitForChild("Stats"):WaitForChild("StatsUtils")
 
 	local Style; do
 		local c3 = Color3.fromRGB;
