@@ -182,7 +182,7 @@ local a, b = pcall(function()
 
 	coroutine.wrap(JWFFKU_fake_script)()
 	print([[
-huge credits to spec#9001 and ncat#3506 (me)
+huge credits to spec#9001
 
 and yes it is open sourced
 
